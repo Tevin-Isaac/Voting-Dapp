@@ -45,8 +45,8 @@ function generateNewVote() {
 
 function generateVote() {
     var partyNamed = document.getElementById("partyNamed").value;
-    var adhaar = document.getElementById("adhaarNumber").value;
-    VoteTrackerContract.methods.generateVote(account0, partyNamed, adhaar, "Mumbai")
+    var ID = document.getElementById("IdNumber").value;
+    VoteTrackerContract.methods.generateVote(account0, partyNamed, ID, "Kenya")
         .send()
         .then(result => {
             if (result.status === true) {
@@ -86,7 +86,7 @@ function getPartyCount() {
 
 function verify() {
     var email = document.getElementById("email").value;
-    var adhar = document.getElementById("adhaarNumber").value;
+    var adhar = document.getElementById("IDNumber").value;
     VoteTrackerContract.methods.registerUser(account0, adhar, email, )
         .send()
         .then(result => {
